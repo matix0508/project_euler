@@ -25,4 +25,16 @@ def prime_factors(num):
                 break
     return factors
 
-print(prime_factors(NUMBER))
+def max_lst(lst):
+    output = lst[0]
+    for item in lst:
+        if item > output:
+            output = item
+    return output
+
+def main():
+    print(max_lst(prime_factors(NUMBER)))
+
+
+if __name__ == "__main__":
+    main()
