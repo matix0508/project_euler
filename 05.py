@@ -6,11 +6,6 @@ def is_prime(num):
             return False
     return True
 
-def all_prime(lst):
-    for item in lst:
-        if not is_prime(item):
-            return False
-    return True
 
 def factorise(num):
     output = []
@@ -25,28 +20,15 @@ def factorise(num):
                 break
     return output
 
-
-def get_divisors(num):
-    output = []
-    for i in range(2, num+1):
-        if num % i == 0:
-            if is_prime(i):
-                output.append(i)
-            else:
-                pass
+def count(lst, num):
+    output = 0
+    for item in lst:
+        if item == num:
+            output += 1
     return output
 
 
-def all_divisors(limit):
-    output = []
-    for i in range(2, limit + 1):
-        lst = get_divisors(i)
-        for item in lst:
-            if item not in output:
-                output.append(item)
 
-    print(f"lst: {output}")
-    return output
 
 def product_lst(lst):
     output = 1
