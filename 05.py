@@ -1,4 +1,6 @@
 def is_prime(num):
+    if num == 2:
+        return True
     for i in range(2, num):
         if num % i == 0:
             return False
@@ -12,17 +14,15 @@ def all_prime(lst):
 
 def factorise(num):
     output = []
-    for i in range(2, num):
-        if num % i == 0:
-            output.append(i)
-    while not all_prime(output):
-        for item in output:
-            if not is_prime(item):
-                for i in range(2, item):
-                    if item % i == 0:
-                        output.append(i)
-                        item == item // i
-                        break
+    num1 = num
+    while not is_prime(num1):
+        for i in range(2, num1):
+            if num1 % i == 0:
+                num1 = num1 // i
+                output.append(i)
+                if is_prime(num1):
+                    output.append(num1)
+                break
     return output
 
 
