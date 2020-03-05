@@ -20,11 +20,20 @@ def factorise(num):
                 break
     return output
 
-def count(lst, num):
+def how_many(lst, num):
     output = 0
     for item in lst:
         if item == num:
             output += 1
+    return output
+
+def all_factors(limit):
+    output = []
+    for i in range(2, limit + 1):
+        factors = factorise(i)
+        for item in factors:
+            while how_many(factors, item) > how_many(output, item):
+                output.append(item)
     return output
 
 
@@ -37,9 +46,9 @@ def product_lst(lst):
     return output
 
 def main():
-    print(product_lst(all_divisors(20)))
+    print(product_lst(all_factors(20)))
 
 
-print(factorise(68))
-#if __name__ == "__main__":
-#    main()
+#print(factorise(68))
+if __name__ == "__main__":
+    main()
