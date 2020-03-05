@@ -15,9 +15,9 @@ def factorise(num):
             if num1 % i == 0:
                 num1 = num1 // i
                 output.append(i)
-                if is_prime(num1):
-                    output.append(num1)
                 break
+    if is_prime(num1):
+        output.append(num1)
     return output
 
 def how_many(lst, num):
@@ -27,7 +27,7 @@ def how_many(lst, num):
             output += 1
     return output
 
-def all_factors(limit):
+def all_factors(limit): #faulty function!!!
     output = []
     for i in range(2, limit + 1):
         factors = factorise(i)
