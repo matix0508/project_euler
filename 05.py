@@ -27,7 +27,7 @@ def how_many(lst, num):
             output += 1
     return output
 
-def all_factors(limit): #faulty function!!!
+def all_factors(limit):
     output = []
     for i in range(2, limit + 1):
         factors = factorise(i)
