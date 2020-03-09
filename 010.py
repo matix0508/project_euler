@@ -1,8 +1,3 @@
-from os import system, name
-from time import sleep
-
-def clear():
-    _ = system("clear")
 
 def is_prime(num):
     if num == 2:
@@ -16,7 +11,6 @@ def is_prime(num):
         return True
 
 def progres_bar(current, max):
-    clear()
     print(f"Progress: {100 * current / max}%")
 
 def primes_below(limit):
