@@ -14,15 +14,11 @@ def progres_bar(current, max):
     print(f"Progress: {100 * current / max}%")
 
 def primes_below(limit):
-    output = [2]
-    for i in range(3, limit):
-        add = True
-        for item in output:
-            if i % item == 0:
-                add = False
-        if add:
-            output.append(i)
-            progres_bar(i, limit)
+    output = 0
+    for i in range(2, limit):
+        progres_bar(i, limit)
+        if is_prime(i):
+            output += i
     return output
 
 def lst_sum(lst):
@@ -33,7 +29,7 @@ def lst_sum(lst):
 
 def main():
     pass
-    print(lst_sum(primes_below(2000000)))
+    print(primes_below(2000000))
 
 if __name__ == "__main__":
     main()
