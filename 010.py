@@ -1,3 +1,8 @@
+from os import system, name
+from time import sleep
+
+def clear():
+    _ = system("clear")
 
 def is_prime(num):
     if num == 2:
@@ -11,8 +16,9 @@ def is_prime(num):
         return True
 
 def progres_bar(current, max):
-    print(f"Progress: {100 * current / max} %")
-
+    clear()
+    print(f"Progress: {100 * current / max}%")
+    
 def primes_below(limit):
     output = [2]
     for i in range(3, limit):
@@ -22,7 +28,7 @@ def primes_below(limit):
                 add = False
         if add:
             output.append(i)
-            progres_bar(i, limit)
+            progres_bar(i, limi)
     return output
 
 def lst_sum(lst):
