@@ -39,4 +39,6 @@ def horizontal(grid):
             if product > output:
                 output = product
                 greatest = (row, column)
-print(horizontal(GRID))
+    return (output, greatest)
+product, (row, col) = horizontal(GRID)
+print(f"starting point: row:{row}, column: {col}, product: {product}")
