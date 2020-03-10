@@ -21,5 +21,22 @@ grid = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 grid = grid.split("\n")
 GRID = []
 for i in range(len(grid)):
+    GRID.append([])
     GRID[i] = grid[i].split(" ")
-print(GRID)
+
+def product(num1, num2, num3, num4):
+    return num1 * num2 * num3 * num4
+
+def horizontal(grid):
+    greatest = (0, 0)
+    output = 1
+    for row in range(len(grid)):
+        for column in range(len(grid[0]) - 4):
+            product = 1
+            for i in range(4):
+                product *= int(grid[row][column + i])
+            print(product)
+            if product > output:
+                output = product
+                greatest = (row, column)
+print(horizontal(GRID))
