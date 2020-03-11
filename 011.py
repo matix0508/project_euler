@@ -40,5 +40,31 @@ def horizontal(grid):
                 output = product
                 greatest = (row, column)
     return (output, greatest)
+
+def vertical(grid):
+    greatest = (0, 0)
+    output = 1
+    for row in range(len(grid)-4):
+        for column in range(len(grid[0])):
+            product = 1
+            for i in range(4):
+                product *= int(grid[row+i][column])
+            if product > output:
+                output = product
+                greatest = (row, column)
+    return (output, greatest)
+
+def diagonal(grid):
+    greatest = (0, 0)
+    output = 1
+    for row in range(len(grid) - 4):
+        for column in range(len(grid[0]) - 4):
+            product = 1
+            for i in range(4):
+                product *= int(grid[row+i][column+i])
+            if product > output:
+                output = product
+                greatest = (row, column)
+    return (output, greatest)
 product, (row, col) = horizontal(GRID)
 print(f"starting point: row:{row}, column: {col}, product: {product}")
