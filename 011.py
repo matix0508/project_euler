@@ -28,21 +28,18 @@ def product(num1, num2, num3, num4):
     return num1 * num2 * num3 * num4
 
 def horizontal(grid):
-    greatest = (0, 0)
     output = 1
     for row in range(len(grid)):
         for column in range(len(grid[0]) - 4):
             product = 1
             for i in range(4):
                 product *= int(grid[row][column + i])
-            print(product)
             if product > output:
                 output = product
                 greatest = (row, column)
-    return (output, greatest)
+    return output
 
 def vertical(grid):
-    greatest = (0, 0)
     output = 1
     for row in range(len(grid)-4):
         for column in range(len(grid[0])):
@@ -51,11 +48,9 @@ def vertical(grid):
                 product *= int(grid[row+i][column])
             if product > output:
                 output = product
-                greatest = (row, column)
-    return (output, greatest)
+    return output
 
 def diagonal(grid):
-    greatest = (0, 0)
     output = 1
     for row in range(len(grid) - 4):
         for column in range(len(grid[0]) - 4):
@@ -64,7 +59,23 @@ def diagonal(grid):
                 product *= int(grid[row+i][column+i])
             if product > output:
                 output = product
-                greatest = (row, column)
-    return (output, greatest)
-product, (row, col) = horizontal(GRID)
-print(f"starting point: row:{row}, column: {col}, product: {product}")
+    return output
+
+def main():
+    output = 0
+    product = horizontal(GRID)
+    print(product)
+    if product > output:
+        output = product
+    product = vertical(GRID)
+    print(product)
+    if product > output:
+        output = product
+    product = diagonal(GRID)
+    print(product)
+    if product > output:
+        output = product
+    print(output)
+
+if __name__ == "__main__":
+    main()
