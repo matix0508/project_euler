@@ -30,7 +30,7 @@ def product(num1, num2, num3, num4):
 def horizontal(grid):
     output = 1
     for row in range(len(grid)):
-        for column in range(len(grid[0]) - 4):
+        for column in range(len(grid[0]) - 3):
             product = 1
             for i in range(4):
                 product *= int(grid[row][column + i])
@@ -41,7 +41,7 @@ def horizontal(grid):
 
 def vertical(grid):
     output = 1
-    for row in range(len(grid)-4):
+    for row in range(len(grid)-3):
         for column in range(len(grid[0])):
             product = 1
             for i in range(4):
@@ -52,8 +52,8 @@ def vertical(grid):
 
 def diagonal(grid):
     output = 1
-    for row in range(len(grid) - 4):
-        for column in range(len(grid[0]) - 4):
+    for row in range(len(grid) - 3):
+        for column in range(len(grid[0]) - 3):
             product = 1
             for i in range(4):
                 product *= int(grid[row+i][column+i])
